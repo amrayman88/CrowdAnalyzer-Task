@@ -1,4 +1,4 @@
-const{model} = require('mongoose')
-const{DashboardSchema} = require('../schema')
+const { model } = require('mongoose')
+const { DashboardSchema } = require('../schema')
 
-module.exports = model('Dashboard',DashboardSchema)
+module.exports = model('Dashboard', DashboardSchema)
