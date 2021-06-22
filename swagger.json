@@ -1,0 +1,93 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is the CrowdAnalyzer task API documentation.",
+      "version": "1.0.0",
+      "title": "Dashboards API"
+    },
+    "host": "localhost:3000",
+    "tags": [
+      {
+        "name": "dashboard",
+        "description": "Dashboard crud operatrions"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/dashboard": {
+        "get": {
+          "tags": [
+            "dashboard"
+          ],
+          "summary": "List all dashboards",
+          "description": "",
+          "operationId": "listDashboards",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Dashboard"
+                }
+              }
+            },
+            "500": {
+              "description": "server error"
+            }
+          }
+        }
+      },
+      "/dashboard/{id}": {
+        "delete": {
+          "tags": [
+            "dashboard"
+          ],
+          "summary": "delete dashboard",
+          "description": "",
+          "operationId": "deleteDashboard",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "dashboard id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "dashboard deleted"
+            },
+            "404": {
+              "description": "dashboard not found"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Dashboard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

@@ -17,8 +17,9 @@ module.exports = new Schema({
     enum: ['hour', 'day', 'month'],
     validate: [function () {
       const range = (this.dateRange.to - this.dateRange.from)
-      return !(raneg >= (config.chartHourConstraintMs)
+      return !(range >= (config.chartHourConstraintMs)
         && this.interval === 'hour')
     }, `Cannot set interval to hour when date range is more than or equal ${config.chartHourConstraint} days`]
   },
+  dashboardId: Schema.Types.ObjectId,
 })

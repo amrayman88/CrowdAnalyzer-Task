@@ -8,6 +8,7 @@ const { StatusCodes } = require('http-status-codes');
 
 const app = express()
 
+
 app.use(express.json())
 app.use(cors())
 app.get('/', (req, res) => {
@@ -31,3 +32,5 @@ const connect = () => {
 }
 
 connect()
+
+module.exports = app
